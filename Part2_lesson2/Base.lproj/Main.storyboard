@@ -74,8 +74,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="light" destination="c4o-t4-2lB" id="vMe-pl-NBr"/>
-                        <outlet property="lightChanger" destination="0tc-Iw-Gjn" id="RWK-sS-9w3"/>
+                        <outlet property="lightChangerButton" destination="0tc-Iw-Gjn" id="yfq-ZZ-nBZ"/>
+                        <outlet property="trafficLight" destination="c4o-t4-2lB" id="OGj-Nd-FRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

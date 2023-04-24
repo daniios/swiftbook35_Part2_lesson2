@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
 
     // MARK: - IB Outlets
-    @IBOutlet var lightChanger: UIButton!
-    @IBOutlet weak var light: UIStackView!
+    @IBOutlet var lightChangerButton: UIButton!
+    @IBOutlet weak var trafficLight: UIStackView!
     
     // MARK: - Private Properties
     private var clickCounter = 0
@@ -19,34 +19,40 @@ class ViewController: UIViewController {
     // MARK: - Life Cycles Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        lightChanger.layer.cornerRadius = 10
+        lightChangerButton.layer.cornerRadius = 10
         turnLightOff()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        for lightItem in trafficLight.arrangedSubviews {
+            lightItem.layer.cornerRadius = lightItem.frame.width / 2
+        }
     }
 
     // MARK: - IB Actions
     @IBAction func changeLightColor() {
-        lightChanger.setTitle("NEXT", for: .normal)
+        lightChangerButton.setTitle("NEXT", for: .normal)
         turnNextLightOn()
     }
     
     // MARK: - Private Methods
     private func turnLightOff() {
-        for lightItem in light.arrangedSubviews {
-            lightItem.layer.cornerRadius = lightItem.frame.width / 2
+        for lightItem in trafficLight.arrangedSubviews {
             lightItem.alpha = 0.3
         }
     }
 
     private func turnNextLightOn() {
         let currentLightIndex = clickCounter %
-                                (light.arrangedSubviews.count * 2 - 2)
-        if currentLightIndex < light.arrangedSubviews.count {
+                                (trafficLight.arrangedSubviews.count * 2 - 2)
+        if currentLightIndex < trafficLight.arrangedSubviews.count {
             turnLightOff()
-            light.arrangedSubviews[currentLightIndex].alpha = 1
+            trafficLight.arrangedSubviews[currentLightIndex].alpha = 1
         } else {
             turnLightOff()
-            light.arrangedSubviews[currentLightIndex -
-                                   light.arrangedSubviews.count + 1].alpha = 1
+            trafficLight.arrangedSubviews[currentLightIndex -
+                                   trafficLight.arrangedSubviews.count + 1].alpha = 1
         }
         clickCounter += 1
     }
