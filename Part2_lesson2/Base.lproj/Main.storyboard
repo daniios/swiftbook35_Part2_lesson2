@@ -30,16 +30,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMC-vO-JgI">
                                         <rect key="frame" x="0.0" y="157.66666666666666" width="119.66666666666667" height="119.66666666666666"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="vMC-vO-JgI" secondAttribute="height" multiplier="1:1" id="7fN-pd-Pe6"/>
-                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNK-Tv-roD">
                                         <rect key="frame" x="0.0" y="315.33333333333331" width="119.66666666666667" height="119.66666666666669"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="gNK-Tv-roD" secondAttribute="height" multiplier="1:1" id="GSG-mk-Vuw"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
